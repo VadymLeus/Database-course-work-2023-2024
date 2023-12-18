@@ -1,0 +1,176 @@
+﻿<Window x:Class="CourseWork_DB_SIP_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWork_DB_SIP_WPF"
+        mc:Ignorable="d"
+        Title="Страхова компанія" Height="599" Width="1166">
+    <Grid Margin="0,0,0,74">
+        <TabControl Margin="0,0,0,-57">
+            <TabItem Header="Поліси" Margin="-2,0,-2,2" Height="20" VerticalAlignment="Bottom">
+                <Grid Background="#FFE5E5E5" Height="541">
+                    <TabControl Margin="635,0,10,223">
+                        <TabItem Header="Автомобілі">
+                            <Grid Background="#FFE5E5E5" Height="289">
+                                <DataGrid x:Name="AutoTBL1" HorizontalAlignment="Center" Height="131" Margin="0,35,0,0" VerticalAlignment="Top" Width="475" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="AutoTBL1_SelectionChanged"/>
+                                <Label Content="Застраховані автомобілі:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="40"/>
+                                <Button x:Name="AddPoliciesAutoBTN" Content="Додати поліс" HorizontalAlignment="Left" Height="28" Margin="310,255,0,0" VerticalAlignment="Top" Width="175" Click="AddPoliciesAutoBTN_Click"/>
+                                <TextBox x:Name="AutoCostTB" HorizontalAlignment="Left" Margin="365,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="AutoNumberTB" HorizontalAlignment="Left" Margin="116,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="AutoYearTB" HorizontalAlignment="Left" Margin="116,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <Label Content="Номер авто:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Рік випуску авто:" HorizontalAlignment="Left" Margin="10,216,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Ціна авто:" HorizontalAlignment="Left" Margin="258,185,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="ChangeAutoBTN" Content="Змінити інформацію про авто" HorizontalAlignment="Left" Height="28" Margin="61,255,0,0" VerticalAlignment="Top" Width="175" Click="ChangeAutoBTN_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Люди" Margin="-2,0,-2,0">
+                            <Grid Background="#FFE5E5E5">
+                                <DataGrid x:Name="LifeTBL1" HorizontalAlignment="Center" Height="131" Margin="0,35,0,0" VerticalAlignment="Top" Width="475" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="LifeTBL1_SelectionChanged"/>
+                                <Label Content="Застраховані люди:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="AddPoliciesHumanBTN" Content="Додати поліс" HorizontalAlignment="Left" Height="28" Margin="310,255,0,0" VerticalAlignment="Top" Width="175" Click="AddPoliciesHumanBTN_Click"/>
+                                <TextBox x:Name="LifeFiNameTB" HorizontalAlignment="Left" Margin="116,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="LifeSeNameTB" HorizontalAlignment="Left" Margin="116,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <Label Content="Прізвище:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="ChangeHumanBTN" Content="Змінити дані про людину" HorizontalAlignment="Left" Height="28" Margin="61,255,0,0" VerticalAlignment="Top" Width="175" Click="ChangeHumanBTN_Click"/>
+                                <Label Content="По-батькові:" HorizontalAlignment="Left" Margin="248,184,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Дата народження:" HorizontalAlignment="Left" Margin="246,220,0,0" VerticalAlignment="Top"/>
+                                <TextBox x:Name="LifeFaNameTB" HorizontalAlignment="Left" Margin="365,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <DatePicker x:Name="LifeBithDayDP" HorizontalAlignment="Left" Margin="365,221,0,0" VerticalAlignment="Top" Height="27"/>
+                                <Label Content="Ім'я:" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Квартири">
+                            <Grid Background="#FFE5E5E5">
+                                <DataGrid x:Name="HomeTBL1" HorizontalAlignment="Center" Height="132" Margin="0,35,0,0" VerticalAlignment="Top" Width="475" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="HomeTBL1_SelectionChanged"/>
+                                <Label Content="Застраховані будинки:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="AddPoliciesHomeBTN" Content="Додати поліс" HorizontalAlignment="Left" Height="28" Margin="310,255,0,0" VerticalAlignment="Top" Width="175" Click="AddPoliciesHomeBTN_Click"/>
+                                <TextBox x:Name="HomeCostTB" HorizontalAlignment="Left" Margin="365,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="HomeAddressrTB" HorizontalAlignment="Left" Margin="116,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <Label Content="Адреса:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Ціна квартири:" HorizontalAlignment="Left" Margin="258,185,0,0" VerticalAlignment="Top"/>
+                                <Button x:Name="ChangeHomeBTN" Content="Змінити дані про квартиру" HorizontalAlignment="Left" Height="28" Margin="61,255,0,0" VerticalAlignment="Top" Width="175" Click="ChangeHomeBTN_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Страхові випадки">
+                            <Grid Background="#FFE5E5E5">
+                                <DataGrid x:Name="InsuranceEventTBL" HorizontalAlignment="Left" Height="145" VerticalAlignment="Top" Width="450" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="InsuranceEventTBL_SelectionChanged"/>
+                                <Button x:Name="AddEventBTN" Content="Додати випадок" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="AddEventBTN_Click"/>
+                                <Button x:Name="ChangeEventBTN" Content="Змінити випадок" HorizontalAlignment="Center" Margin="0,255,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ChangeEventBTN_Click"/>
+                                <Button x:Name="DeleteEventBTN" Content="Видалити випадок" HorizontalAlignment="Left" Margin="367,255,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="DeleteEventBTN_Click"/>
+                                <DatePicker x:Name="EventDP" HorizontalAlignment="Left" Margin="286,216,0,0" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="IdPoliciesEventTB" HorizontalAlignment="Left" Margin="91,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+                                <TextBox x:Name="IdEventTB" HorizontalAlignment="Left" Margin="91,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+                                <TextBox x:Name="EventSummaTB" HorizontalAlignment="Left" Margin="286,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <TextBox x:Name="EventReasonTB" HorizontalAlignment="Left" Margin="286,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                                <Label Content="ID поліса:" HorizontalAlignment="Left" Margin="12,150,0,0" VerticalAlignment="Top"/>
+                                <Label Content="ID випадка:" HorizontalAlignment="Left" Margin="12,181,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Сума виплати:" HorizontalAlignment="Left" Margin="181,150,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Причина:" HorizontalAlignment="Left" Margin="177,181,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Дата випадку:" HorizontalAlignment="Left" Margin="177,215,0,0" VerticalAlignment="Top"/>
+
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <DataGrid x:Name="PoliciesTBL1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="6,21,539,223" SelectionChanged="PoliciesTBL4_SelectionChanged"/>
+                    <Label Content="Поліси" HorizontalAlignment="Left" Margin="6,-2,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="23" Width="81"/>
+                    <TextBox x:Name="IdPoliciesNewTB" HorizontalAlignment="Left" Height="19" Margin="184,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <TextBox x:Name="SummaPolNewTB" HorizontalAlignment="Left" Height="19" Margin="184,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <TextBox x:Name="IdAgentNewTB" HorizontalAlignment="Left" Height="19" Margin="184,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <TextBox x:Name="IdClientNewTB" HorizontalAlignment="Left" Height="18" Margin="454,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+                    <DatePicker x:Name="DateStartDP" HorizontalAlignment="Left" Height="26" Margin="454,367,0,0" VerticalAlignment="Top" Width="134"/>
+                    <DatePicker x:Name="DateEndDP" HorizontalAlignment="Left" Height="26" Margin="454,401,0,0" VerticalAlignment="Top" Width="134"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="75,359,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Сума полісу:" HorizontalAlignment="Left" Height="26" Margin="75,397,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Label Content="ID агента:" HorizontalAlignment="Left" Height="31" Margin="75,428,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Label Content="ID слієнта:" HorizontalAlignment="Left" Height="29" Margin="358,428,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.5,0.52"/>
+                    <Label Content="Дата початку:" HorizontalAlignment="Left" Margin="356,367,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Дата кінця:" HorizontalAlignment="Left" Margin="356,399,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="DeletePolBTN" Content="Видалити поліс" HorizontalAlignment="Left" Height="32" Margin="358,462,0,0" VerticalAlignment="Top" Width="118" Click="DeletePolBTN_Click"/>
+                    <Button x:Name="ChangePolBTN" Content="Змінити поліс" HorizontalAlignment="Left" Height="32" Margin="198,462,0,0" VerticalAlignment="Top" Width="120" Click="ChangePolBTN_Click"/>
+                    <DatePicker x:Name="DatePicker1" HorizontalAlignment="Left" Height="30" Margin="727,392,0,0" VerticalAlignment="Top" Width="136" SelectedDateChanged="DatePicker1_SelectedDateChanged"/>
+                    <DatePicker x:Name="DatePicker2" HorizontalAlignment="Left" Height="30" Margin="726,426,0,0" VerticalAlignment="Top" Width="137" SelectedDateChanged="DatePicker2_SelectedDateChanged"/>
+                    <Button x:Name="ClearFilterDataBTN" Content="Зняти фільтрацію" HorizontalAlignment="Left" Margin="726,465,0,0" VerticalAlignment="Top" Width="125" Click="ClearFilterDataBTN_Click"/>
+                    <Label Content="Початок:" HorizontalAlignment="Left" Margin="642,395,0,0" VerticalAlignment="Top" Width="66"/>
+                    <Label Content="Кінець:" HorizontalAlignment="Left" Margin="642,427,0,0" VerticalAlignment="Top" Width="66"/>
+                    <RadioButton x:Name="InsuranceAutoRB" Content="Страхування автомобіля" HorizontalAlignment="Left" Margin="907,436,0,0" VerticalAlignment="Top" Checked="InsuranceAutoRB_Checked"/>
+                    <RadioButton x:Name="InsuranceHomeRB" Content="Страхування житла" HorizontalAlignment="Left" Margin="907,395,0,0" VerticalAlignment="Top" Checked="InsuranceHomeRB_Checked"/>
+                    <RadioButton x:Name="InsuranceLifeRB" Content="Страхування життя" HorizontalAlignment="Left" Margin="907,415,0,0" VerticalAlignment="Top" Checked="InsuranceLifeRB_Checked"/>
+                    <Button x:Name="ClearFilterBTN" Content="Зняти фільтрацію" HorizontalAlignment="Left" Margin="910,468,0,0" VerticalAlignment="Top" Width="125" Click="ClearFilterBTN_Click"/>
+                    <Label Content="Фільтрація по типу:" HorizontalAlignment="Left" Margin="910,367,0,0" VerticalAlignment="Top" Width="122"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="189" Margin="24,323,0,0" VerticalAlignment="Top" Width="582" d:IsHidden="True"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="189" Margin="636,323,0,0" VerticalAlignment="Top" Width="500"/>
+                    <Label Content="Додавання нового полісу:" HorizontalAlignment="Left" Margin="46,323,0,0" VerticalAlignment="Top" FontSize="14"/>
+                    <Label Content="Фільтрація по датам:" HorizontalAlignment="Left" Margin="642,327,0,0" VerticalAlignment="Top" FontSize="14" Width="152"/>
+                    <Label Content="Фільтрація по типу:" HorizontalAlignment="Left" Margin="898,330,0,0" VerticalAlignment="Top" FontSize="14" Width="206"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Агенти">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="AgentTBL1" HorizontalAlignment="Left" Height="359" Margin="10,26,0,0" VerticalAlignment="Top" Width="600" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="AgentTBL2_SelectionChanged"/>
+                    <Label Content="Агенти:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Поліси:" HorizontalAlignment="Left" Margin="646,2,0,0" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="PoliciesTBL2" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="625,28,14,288"/>
+                    <Label Content="Ім'я:" HorizontalAlignment="Left" Margin="687,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Прізвище:" HorizontalAlignment="Left" Margin="657,331,0,0" VerticalAlignment="Top"/>
+                    <Label Content="По-батькові:" HorizontalAlignment="Left" Margin="650,361,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Номер телефону:" HorizontalAlignment="Left" Margin="625,392,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Посада:" HorizontalAlignment="Left" Margin="677,422,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="AgentFiTB" HorizontalAlignment="Left" Margin="746,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="AgentSeTB" HorizontalAlignment="Left" Margin="746,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="AgentFaTB" HorizontalAlignment="Left" Margin="746,369,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="AgentPhoTB" HorizontalAlignment="Left" Margin="746,400,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="AgentPostTB" HorizontalAlignment="Left" Margin="746,426,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="SaveAgentBTN" Content="Додати агента" HorizontalAlignment="Left" Height="23" Margin="906,369,0,0" VerticalAlignment="Top" Width="195" Click="SaveAgentBTN_Click"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="693,272,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="AgentIDTB" HorizontalAlignment="Left" Margin="746,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="DeleteAgentBTN" Content="Видалити агента" HorizontalAlignment="Left" Height="23" Margin="906,303,0,0" VerticalAlignment="Top" Width="195" Click="DeleteAgentBTN_Click"/>
+                    <Label Content="(Для видалення треба ID)" HorizontalAlignment="Left" Margin="922,326,0,0" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="221" Margin="625,245,0,0" VerticalAlignment="Top" Width="496"/>
+                    <Label Content="Додавання видалення редагування праціників:" HorizontalAlignment="Left" Margin="635,245,0,0" VerticalAlignment="Top"/>
+                    <RadioButton x:Name="AgentSeRB" Content="Прізвище" HorizontalAlignment="Left" Margin="35,405,0,0" VerticalAlignment="Top" Checked="AgentSeRB_Checked"/>
+                    <RadioButton x:Name="AgentPhoneRB" Content="Номер телефону" HorizontalAlignment="Left" Margin="140,405,0,0" VerticalAlignment="Top" Checked="AgentPhoneRB_Checked"/>
+                    <Button x:Name="ClearFilterAgentBTN" Content="Зняти фільтрацію" HorizontalAlignment="Left" Height="20" Margin="35,430,0,0" VerticalAlignment="Top" Width="226" Click="ClearFilterAgentBTN_Click"/>
+                    <TextBox x:Name="SeachAgentTB" HorizontalAlignment="Left" Height="24" Margin="310,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" TextChanged="SeachAgentTB_TextChanged"/>
+                    <Button x:Name="AsseptChangeAgentBTN" Content="Змінити дані" HorizontalAlignment="Left" Height="28" Margin="908,416,0,0" VerticalAlignment="Top" Width="192" Click="AsseptChangeAgentBTN_Click"/>
+                    <Label Content="Введіть дані для фільтрації:" HorizontalAlignment="Left" Margin="310,402,0,0" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="92" Margin="10,392,0,0" VerticalAlignment="Top" Width="510"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Клієнти" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="ClientTBL1" HorizontalAlignment="Left" Height="359" Margin="10,26,0,0" VerticalAlignment="Top" Width="600" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ClientTBL_SelectionChanged"/>
+                    <Label Content="Клієнти:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Поліси:" HorizontalAlignment="Left" Margin="646,2,0,0" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="PoliciesTBL3" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="625,28,14,290"/>
+                    <Label Content="Ім'я:" HorizontalAlignment="Left" Margin="687,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Прізвище:" HorizontalAlignment="Left" Margin="657,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content="По-батькові:" HorizontalAlignment="Left" Margin="650,360,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Номер телефону:" HorizontalAlignment="Left" Margin="625,392,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Адреса:" HorizontalAlignment="Left" Margin="677,422,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ClientFiTB" HorizontalAlignment="Left" Margin="746,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="ClientSeTB" HorizontalAlignment="Left" Margin="746,334,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="ClientFaTB" HorizontalAlignment="Left" Margin="746,368,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="ClientPhoTB" HorizontalAlignment="Left" Margin="746,400,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="ClientAddressTB" HorizontalAlignment="Left" Margin="746,426,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="SaveClientBTN" Content="Додати клієнта" HorizontalAlignment="Left" Height="22" Margin="907,374,0,0" VerticalAlignment="Top" Width="195" Click="SaveClientBTN_Click"/>
+                    <Label Content="ID:" HorizontalAlignment="Left" Margin="693,272,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="ClientIDTB" HorizontalAlignment="Left" Margin="746,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="DeleteClientBTN" Content="Видалити агента" HorizontalAlignment="Left" Height="22" Margin="907,308,0,0" VerticalAlignment="Top" Width="195" Click="DeleteClientBTN_Click"/>
+                    <Label Content="(Для видалення треба ID)" HorizontalAlignment="Left" Margin="923,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Додавання видалення редагування клієнтів" HorizontalAlignment="Left" Margin="635,243,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="AsseptChangeClientBTN" Content="Змінити дані" HorizontalAlignment="Left" Height="28" Margin="909,420,0,0" VerticalAlignment="Top" Width="192" Click="AsseptChangeClientBTN_Click"/>
+                    <RadioButton x:Name="ClientSeRB" Content="Прізвище" HorizontalAlignment="Left" Margin="35,405,0,0" VerticalAlignment="Top" Checked="ClientSeRB_Checked"/>
+                    <RadioButton x:Name="ClientPhoneRB" Content="Номер телефону" HorizontalAlignment="Left" Margin="140,405,0,0" VerticalAlignment="Top" Checked="ClientPhoneRB_Checked"/>
+                    <Button x:Name="ClearFilterClientBTN" Content="Зняти фільтрацію" HorizontalAlignment="Left" Height="20" Margin="35,430,0,0" VerticalAlignment="Top" Width="226" Click="ClearFilterClientBTN_Click"/>
+                    <TextBox x:Name="SeachClientTB" HorizontalAlignment="Left" Height="24" Margin="310,428,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="158" TextChanged="SeachClientTB_TextChanged"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="230" Margin="625,240,0,0" VerticalAlignment="Top" Width="488"/>
+                    <Label Content="Введіть дані для фільтрації:" HorizontalAlignment="Left" Margin="310,402,0,0" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="92" Margin="10,392,0,0" VerticalAlignment="Top" Width="510"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
